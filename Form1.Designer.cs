@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Bslider = new System.Windows.Forms.TrackBar();
+            this.Gslider = new System.Windows.Forms.TrackBar();
+            this.Rslider = new System.Windows.Forms.TrackBar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Rslider = new System.Windows.Forms.TrackBar();
-            this.Gslider = new System.Windows.Forms.TrackBar();
-            this.Bslider = new System.Windows.Forms.TrackBar();
             this.Hours2 = new Digital_Clock.DigitalFigure();
             this.Mins2 = new Digital_Clock.DigitalFigure();
             this.Secs1 = new Digital_Clock.DigitalFigure();
@@ -43,9 +43,9 @@
             this.Mins1 = new Digital_Clock.DigitalFigure();
             this.Hours1 = new Digital_Clock.DigitalFigure();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Rslider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Gslider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bslider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gslider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rslider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +67,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(712, 436);
             this.panel1.TabIndex = 0;
+            // 
+            // Bslider
+            // 
+            this.Bslider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bslider.LargeChange = 1;
+            this.Bslider.Location = new System.Drawing.Point(487, 369);
+            this.Bslider.Maximum = 255;
+            this.Bslider.Name = "Bslider";
+            this.Bslider.Size = new System.Drawing.Size(96, 45);
+            this.Bslider.TabIndex = 15;
+            this.Bslider.Scroll += new System.EventHandler(this.Bslider_Scroll);
+            // 
+            // Gslider
+            // 
+            this.Gslider.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Gslider.LargeChange = 1;
+            this.Gslider.Location = new System.Drawing.Point(339, 369);
+            this.Gslider.Maximum = 255;
+            this.Gslider.Name = "Gslider";
+            this.Gslider.Size = new System.Drawing.Size(96, 45);
+            this.Gslider.TabIndex = 14;
+            this.Gslider.Scroll += new System.EventHandler(this.Gslider_Scroll);
+            // 
+            // Rslider
+            // 
+            this.Rslider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Rslider.LargeChange = 1;
+            this.Rslider.Location = new System.Drawing.Point(173, 369);
+            this.Rslider.Maximum = 255;
+            this.Rslider.Name = "Rslider";
+            this.Rslider.Size = new System.Drawing.Size(96, 45);
+            this.Rslider.TabIndex = 13;
+            this.Rslider.Scroll += new System.EventHandler(this.Rslider_Scroll);
             // 
             // panel5
             // 
@@ -99,39 +132,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 48);
             this.panel2.TabIndex = 3;
-            // 
-            // Rslider
-            // 
-            this.Rslider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Rslider.Location = new System.Drawing.Point(173, 369);
-            this.Rslider.Maximum = 255;
-            this.Rslider.Name = "Rslider";
-            this.Rslider.Size = new System.Drawing.Size(96, 45);
-            this.Rslider.TabIndex = 13;
-            this.Rslider.TickFrequency = 15;
-            this.Rslider.Scroll += new System.EventHandler(this.Rslider_Scroll);
-            // 
-            // Gslider
-            // 
-            this.Gslider.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Gslider.Location = new System.Drawing.Point(339, 369);
-            this.Gslider.Maximum = 255;
-            this.Gslider.Name = "Gslider";
-            this.Gslider.Size = new System.Drawing.Size(96, 45);
-            this.Gslider.TabIndex = 14;
-            this.Gslider.TickFrequency = 15;
-            this.Gslider.Scroll += new System.EventHandler(this.Gslider_Scroll);
-            // 
-            // Bslider
-            // 
-            this.Bslider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bslider.Location = new System.Drawing.Point(487, 369);
-            this.Bslider.Maximum = 255;
-            this.Bslider.Name = "Bslider";
-            this.Bslider.Size = new System.Drawing.Size(96, 45);
-            this.Bslider.TabIndex = 15;
-            this.Bslider.TickFrequency = 15;
-            this.Bslider.Scroll += new System.EventHandler(this.Bslider_Scroll);
             // 
             // Hours2
             // 
@@ -251,9 +251,9 @@
             this.Enter += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Rslider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Gslider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bslider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gslider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rslider)).EndInit();
             this.ResumeLayout(false);
 
         }
