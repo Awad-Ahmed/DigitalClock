@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Rslider = new System.Windows.Forms.TrackBar();
+            this.Gslider = new System.Windows.Forms.TrackBar();
+            this.Bslider = new System.Windows.Forms.TrackBar();
             this.Hours2 = new Digital_Clock.DigitalFigure();
             this.Mins2 = new Digital_Clock.DigitalFigure();
             this.Secs1 = new Digital_Clock.DigitalFigure();
@@ -40,10 +43,16 @@
             this.Mins1 = new Digital_Clock.DigitalFigure();
             this.Hours1 = new Digital_Clock.DigitalFigure();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Rslider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gslider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bslider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Bslider);
+            this.panel1.Controls.Add(this.Gslider);
+            this.panel1.Controls.Add(this.Rslider);
             this.panel1.Controls.Add(this.Hours2);
             this.panel1.Controls.Add(this.Mins2);
             this.panel1.Controls.Add(this.Secs1);
@@ -59,21 +68,13 @@
             this.panel1.Size = new System.Drawing.Size(712, 436);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // panel5
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(487, 96);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 48);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Location = new System.Drawing.Point(259, 158);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 48);
-            this.panel3.TabIndex = 4;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel5.Location = new System.Drawing.Point(259, 96);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 48);
+            this.panel5.TabIndex = 6;
             // 
             // panel4
             // 
@@ -83,13 +84,54 @@
             this.panel4.Size = new System.Drawing.Size(10, 48);
             this.panel4.TabIndex = 5;
             // 
-            // panel5
+            // panel3
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel5.Location = new System.Drawing.Point(259, 96);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 48);
-            this.panel5.TabIndex = 6;
+            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.Location = new System.Drawing.Point(259, 158);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 48);
+            this.panel3.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Location = new System.Drawing.Point(487, 96);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 48);
+            this.panel2.TabIndex = 3;
+            // 
+            // Rslider
+            // 
+            this.Rslider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Rslider.Location = new System.Drawing.Point(173, 369);
+            this.Rslider.Maximum = 255;
+            this.Rslider.Name = "Rslider";
+            this.Rslider.Size = new System.Drawing.Size(96, 45);
+            this.Rslider.TabIndex = 13;
+            this.Rslider.TickFrequency = 15;
+            this.Rslider.Scroll += new System.EventHandler(this.Rslider_Scroll);
+            // 
+            // Gslider
+            // 
+            this.Gslider.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Gslider.Location = new System.Drawing.Point(339, 369);
+            this.Gslider.Maximum = 255;
+            this.Gslider.Name = "Gslider";
+            this.Gslider.Size = new System.Drawing.Size(96, 45);
+            this.Gslider.TabIndex = 14;
+            this.Gslider.TickFrequency = 15;
+            this.Gslider.Scroll += new System.EventHandler(this.Gslider_Scroll);
+            // 
+            // Bslider
+            // 
+            this.Bslider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bslider.Location = new System.Drawing.Point(487, 369);
+            this.Bslider.Maximum = 255;
+            this.Bslider.Name = "Bslider";
+            this.Bslider.Size = new System.Drawing.Size(96, 45);
+            this.Bslider.TabIndex = 15;
+            this.Bslider.TickFrequency = 15;
+            this.Bslider.Scroll += new System.EventHandler(this.Bslider_Scroll);
             // 
             // Hours2
             // 
@@ -208,6 +250,10 @@
             this.Shown += new System.EventHandler(this.Form1_Load);
             this.Enter += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Rslider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gslider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bslider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,6 +271,9 @@
         private DigitalFigure Mins2;
         private DigitalFigure Secs1;
         private DigitalFigure Hours2;
+        private System.Windows.Forms.TrackBar Rslider;
+        private System.Windows.Forms.TrackBar Bslider;
+        private System.Windows.Forms.TrackBar Gslider;
     }
 }
 

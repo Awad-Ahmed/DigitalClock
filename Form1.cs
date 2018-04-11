@@ -14,25 +14,42 @@ namespace Digital_Clock
 {
     public partial class Clock : Form
     {
+        int RedValue,GreenValue,BlueValue;
         int Hrs, Mins, Secs;
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         int HoursFirstDigit, HoursSecondDigit, MinutesFirstDigit, MinutesSecodDigit, SecondsFirstDigit, SecondsSecondDigit;
+
+        private void Bslider_Scroll(object sender, EventArgs e)
+        {
+            BlueValue = Bslider.Value;
+        }
+
+        private void Gslider_Scroll(object sender, EventArgs e)
+        {
+            GreenValue = Gslider.Value;
+        }
+
+        private void Rslider_Scroll(object sender, EventArgs e)
+        {
+            RedValue = Rslider.Value;
+        }
+
         public void MapNumber(int num, DigitalFigure a)
         {
             switch (num)
             {
                 case 0:
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelTopLeft = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelMid = Color.FromArgb(255, 64, 64, 64);
-                    a.PanelBottomLeft = Color.HotPink;
+                    a.PanelBottomLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     break;
                 case 1:
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelTop = Color.FromArgb(255, 64, 64, 64);
                     a.PanelTopLeft = Color.FromArgb(255, 64, 64, 64);
                     a.PanelMid = Color.FromArgb(255, 64, 64, 64);
@@ -40,28 +57,28 @@ namespace Digital_Clock
                     a.PanelBottomLeft = Color.FromArgb(255, 64, 64, 64);
                     break;
                 case 2:
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelMid = Color.HotPink;
-                    a.PanelBottomLeft = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottomLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelTopLeft = Color.FromArgb(255, 64, 64, 64);
                     a.PanelBottoRight = Color.FromArgb(255, 64, 64, 64);
                     break;
                 case 3:
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopRigt = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelTopLeft = Color.FromArgb(255, 64, 64, 64);
-                    a.PanelBottoRight = Color.HotPink;
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelBottomLeft = Color.FromArgb(255, 64, 64, 64);
-                    a.PanelMid = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     break;
                 case 4:
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelTopLeft = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
-                    a.PanelMid = Color.HotPink;
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelTop = Color.FromArgb(255, 64, 64, 64);
                     a.PanelBottom = Color.FromArgb(255, 64, 64, 64);
                     a.PanelBottomLeft = Color.FromArgb(255, 64, 64, 64);
@@ -69,46 +86,46 @@ namespace Digital_Clock
                 case 5:
                     a.PanelBottomLeft = Color.FromArgb(255, 64, 64, 64);
                     a.PanelTopRigt = Color.FromArgb(255, 64, 64, 64);
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopLeft = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
-                    a.PanelMid = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     break;
                 case 6:
                     a.PanelTopRigt = Color.FromArgb(255, 64, 64, 64);
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopLeft = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
-                    a.PanelMid = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
-                    a.PanelBottomLeft = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottomLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     break;
                 case 7:
                     a.PanelBottomLeft = Color.FromArgb(255, 64, 64, 64);
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelTopLeft = Color.FromArgb(255, 64, 64, 64);
                     a.PanelMid = Color.FromArgb(255, 64, 64, 64);
                     a.PanelBottom = Color.FromArgb(255, 64, 64, 64);
                     break;
                 case 8:
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelTopLeft = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
-                    a.PanelMid = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
-                    a.PanelBottomLeft = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottomLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     break;
                 case 9:
-                    a.PanelTop = Color.HotPink;
-                    a.PanelTopRigt = Color.HotPink;
-                    a.PanelTopLeft = Color.HotPink;
-                    a.PanelBottoRight = Color.HotPink;
-                    a.PanelMid = Color.HotPink;
-                    a.PanelBottom = Color.HotPink;
+                    a.PanelTop = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopRigt = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelTopLeft = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottoRight = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelMid = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
+                    a.PanelBottom = Color.FromArgb(255, RedValue, GreenValue, BlueValue);
                     a.PanelBottomLeft = Color.FromArgb(255, 64, 64, 64);
                     break;
 
